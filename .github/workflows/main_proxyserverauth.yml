@@ -105,14 +105,29 @@ jobs:
           name: node-app
 
 
-    - name: 'Login via Azure CLI'
-      uses: azure/login@v1
+
+
+      - name: Login to Azure
+
+     uses: azure/login@v1
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-    - name: 'Deploy to Azure Web App'
-      uses: azure/webapps-deploy@v2
-      with:
-        app-name: 'proxyserverauth'
-        slot-name: 'production'
-          
+
+
+
+      - name: 'Deploy to Azure Web App'
+
+        uses: azure/webapps-deploy@v2
+
+        id: deploy-to-webapp
+
+        with:
+
+          app-name: 'proxyserverauth'
+
+          slot-name: 'Production'
+
+          package: .
+
+
