@@ -1,11 +1,24 @@
-name: Deploy Node.js App to Azure
+# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
+
+# More GitHub Actions for Azure: https://github.com/Azure/actions
+
+
+
+
+name: Build and deploy Node.js app to Azure Web App - proxyserverauth
+
+
+
 
 on:
+
   push:
+
     branches:
+
       - main
 
-workflow_dispatch:
+  workflow_dispatch:
 
 
 
@@ -90,6 +103,7 @@ jobs:
         with:
 
           name: node-app
+
 
     - name: 'Login via Azure CLI'
       uses: azure/login@v1
